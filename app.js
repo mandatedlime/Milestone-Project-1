@@ -1,4 +1,5 @@
 import { setupGround, updateGround } from "./ground.js"
+import { updateZombie, setupZombie } from "./zombie.js"
 
 // sets world scale
 const WORLD_WIDTH = 100
@@ -31,6 +32,7 @@ function update(time) {
     const delta = time - lastTime
     
     updateGround(delta, speedScale)
+    updateZombie(delta, speedScale)
     updateSpeedScale(delta)
     updateScore(delta)
 
@@ -38,7 +40,7 @@ function update(time) {
     window.requestAnimationFrame(update)
 }
 
-
+// functions to update speed, score and start.
 function updateSpeedScale(delta) {
     speedScale += delta * SPEED_SCALE_INCREASE
 }
@@ -51,6 +53,7 @@ function updateScore(delta){
 function handleStart() {
     lastTime = null
     setupGround()
+    setupZombie()
     startScreenElem.classList.add("hide")
     speedScale = 1
     score = 0
