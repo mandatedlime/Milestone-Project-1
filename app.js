@@ -4,7 +4,7 @@ import { updateZombie, setupZombie } from "./zombie.js"
 // sets world scale
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 100
-const SPEED_SCALE_INCREASE = 0.0001
+const SPEED_SCALE_INCREASE = 0.00001
 
 // creating the worldElem
 const worldElem = document.querySelector("[data-world]")
