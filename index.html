@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milestone Project 1</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" type="module"></script>
 </head>
 <body>
-    <div id="game1">
-        <div id="mainCharacter"></div>
-    </div>
-    
-    <canvas id="mainCharacter"></canvas>
-    
+    <div class="world" data-world>     
+        <div class="score" data-score>0</div>
+
+        <div class="start-screen" data-start-screen> Press Any Key To Begin</div>
+
+        <img src="imgs/ground.png" alt="floor" class="ground" data-ground>
+        <img src="imgs/ground.png" alt="floor" class="ground" data-ground>
+        <img src="imgs/Walk (2).png" alt="zom" class="zombie">
 </body>
 <script src="script.js"></script>
 </html>
