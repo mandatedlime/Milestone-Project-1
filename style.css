@@ -1,22 +1,38 @@
-*{
-    padding: 0;
+*::before, *::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-#game1{
-    width: 100%;
-    height: 500px;
-    border: 5px dotted black;
-    margin: auto;
-}
-
-#mainCharacter{
-    width: 100px;
-    height: 20px;
-    background-color:red ;
-    border-radius: 50%;
+.world {
+    overflow: hidden;
     position: relative;
-    top: 450px;
-    left: 190px;
-    z-index: 10000;
+    width: 100%;
+    height: 200px;
+}
+
+.score {
+    position: absolute;
+    font-size: 3vmin;
+    right: 1vmin;
+    top: 1vmin;
+}
+
+.start-screen {
+    position: absolute;
+    font-size: 5vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hide {
+    display: none;
 }
