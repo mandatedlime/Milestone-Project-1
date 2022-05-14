@@ -16,22 +16,25 @@ window.addEventListener('load', () => {
     canvas.style.left = 0;
     canvas.style.top = 0;
 });
-window.addEventListener('keyup', (e) => {
-    switch (e.key) {
-        case 'ArrowLeft':
-            canvas.style.left = parseInt(canvas.style.left) - moveBy + 'px';
-            break;
-        case 'ArrowRight':
-            canvas.style.left = parseInt(canvas.style.left) + moveBy + 'px';
-            break;
-        case 'ArrowUp':
-            canvas.style.top = parseInt(canvas.style.top) - moveBy + 'px';
-            break;
-        case 'ArrowDown':
-            canvas.style.top = parseInt(canvas.style.top) + moveBy + 'px';
-            break;
-    }
-});
+
+
+
+// window.addEventListener('keyup', (e) => {
+//     switch (e.key) {
+//         case 'ArrowLeft':
+//             canvas.style.left = parseInt(canvas.style.left) - moveBy + 'px';
+//             break;
+//         case 'ArrowRight':
+//             canvas.style.left = parseInt(canvas.style.left) + moveBy + 'px';
+//             break;
+//         case 'ArrowUp':
+//             canvas.style.top = parseInt(canvas.style.top) - moveBy + 'px';
+//             break;
+//         case 'ArrowDown':
+//             canvas.style.top = parseInt(canvas.style.top) + moveBy + 'px';
+//             break;
+//     }
+// });
 
 mainCharacter.width = window,innerWidth;
 mainCharacter.height = window.innerHeight;
