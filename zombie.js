@@ -29,6 +29,10 @@ export function updateZombie(delta, speedScale) {
     handleJump(delta)
 }
 
+export function getZombieRect() {
+    return zombieElem.getBoundingClientRect()
+}
+
 // everytime this function is called it updates frame time by multiplying the delta/time with the speedscale so that the animation can keep up
 function handleRun(delta, speedScale) {
     if (isJumping) {

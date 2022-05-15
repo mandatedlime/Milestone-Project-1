@@ -1,6 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
-import { updateZombie, setupZombie } from "./zombie.js"
-import { updateCactus, setupCactus } from "./cactus.js"
+import { updateZombie, setupZombie, getZombieRect } from "./zombie.js"
+import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
 // sets world scale
 const WORLD_WIDTH = 100
@@ -37,9 +37,24 @@ function update(time) {
     updateCactus(delta, speedScale)
     updateSpeedScale(delta)
     updateScore(delta)
+    if (checkLose()) return handleLose()
 
     lastTime = time
     window.requestAnimationFrame(update)
+}
+// making the lose logic 
+function checkLose() {
+    const zombieRect = getZombieRect()
+    return getCactusRects().some(rect => isCollision(rect, zombieRect))
+}
+
+function isCollision(rect1, rect2) {
+    return (
+        rect1.left < rect2.right && 
+        rect1.top < rect2.bottom && 
+        rect1.right > rect2.left && 
+        rect1.bottom > rect2.top
+        )
 }
 
 // functions to update speed, score and start.
