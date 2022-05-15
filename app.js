@@ -1,5 +1,6 @@
 import { setupGround, updateGround } from "./ground.js"
 import { updateZombie, setupZombie } from "./zombie.js"
+import { updateCactus, setupCactus } from "./cactus.js"
 
 // sets world scale
 const WORLD_WIDTH = 100
@@ -33,6 +34,7 @@ function update(time) {
     
     updateGround(delta, speedScale)
     updateZombie(delta, speedScale)
+    updateCactus(delta, speedScale)
     updateSpeedScale(delta)
     updateScore(delta)
 
@@ -54,6 +56,7 @@ function handleStart() {
     lastTime = null
     setupGround()
     setupZombie()
+    setupCactus()
     startScreenElem.classList.add("hide")
     speedScale = 1
     score = 0
