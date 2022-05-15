@@ -1,6 +1,6 @@
-import { setupGround, updateGround } from "./ground.js"
-import { updateZombie, setupZombie, getZombieRect, setZombieLose } from "./zombie.js"
-import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
+// import { setupGround, updateGround } from "./ground.js"
+// import { updateZombie, setupZombie, getZombieRect, setZombieLose } from "./zombie.js"
+// import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
 // sets world scale
 const WORLD_WIDTH = 100

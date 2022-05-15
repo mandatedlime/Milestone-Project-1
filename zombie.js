@@ -1,4 +1,4 @@
-import { getCustomProperty, incrementCustomProperty, setCustomProperty } from "./updateCustomProperty.js"
+// import { getCustomProperty, incrementCustomProperty, setCustomProperty } from "./updateCustomProperty.js"
 
 // setting the variable for the zombie
 const zombieElem = document.querySelector("[data-zombie]")
@@ -14,7 +14,7 @@ let currentFrameTime
 let yVelocity
 
 // sending the function to app.js
-export function setupZombie() {
+function setupZombie() {
     isJumping = false
     zombieFrame = 0
     currentFrameTime = 0
@@ -24,16 +24,16 @@ export function setupZombie() {
     document.addEventListener("keydown", onJump)
 }
 
-export function updateZombie(delta, speedScale) {
+function updateZombie(delta, speedScale) {
     handleRun(delta, speedScale)
     handleJump(delta)
 }
 
-export function getZombieRect() {
+function getZombieRect() {
     return zombieElem.getBoundingClientRect()
 }
 
-export function setZombieLose() {
+function setZombieLose() {
     zombieElem.src = "imgs/Walk (1).png"
 }
 

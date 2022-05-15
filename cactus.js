@@ -1,13 +1,13 @@
-import { setCustomProperty, incrementCustomProperty, getCustomProperty } from "./updateCustomProperty.js"
+// import { setCustomProperty, incrementCustomProperty, getCustomProperty } from "./updateCustomProperty.js"
 
 // Setting the variables for speed and cactus interval
-const SPEED = 0.05
+
 const CACTUS_INTERVAL_MIN = 500
 const CACTUS_INTERVAL_MAX = 2000
-const worldElem = document.querySelector("[data-world]")
+
 
 let nextCactusTime
-export function setupCactus() {
+function setupCactus() {
     nextCactusTime = CACTUS_INTERVAL_MIN
     //removes all cactuses when the game restarts 
     document.querySelectorAll("[data-cactus]").forEach(cactus => {
@@ -15,7 +15,7 @@ export function setupCactus() {
     })
 }
 // create a function to make cactus move and remove cactus once out of screen 
-export function updateCactus(delta, speedScale) {
+function updateCactus(delta, speedScale) {
     document.querySelectorAll("[data-cactus]").forEach(cactus => {
         incrementCustomProperty(cactus, "--left", delta * speedScale * SPEED * -1)
         if (getCustomProperty(cactus, "--left") <= -100) {
@@ -30,7 +30,7 @@ export function updateCactus(delta, speedScale) {
     nextCactusTime -= delta
 }
 
-export function getCactusRects() {
+function getCactusRects() {
     return [...document.querySelectorAll("[data-cactus]")].map(cactus => {
         return cactus.getBoundingClientRect()
     })
