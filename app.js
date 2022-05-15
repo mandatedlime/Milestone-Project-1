@@ -1,5 +1,5 @@
 import { setupGround, updateGround } from "./ground.js"
-import { updateZombie, setupZombie, getZombieRect } from "./zombie.js"
+import { updateZombie, setupZombie, getZombieRect, setZombieLose } from "./zombie.js"
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js"
 
 // sets world scale
@@ -78,6 +78,15 @@ function handleStart() {
     window.requestAnimationFrame(update)
 }
 
+// function that handles all Losing code
+function handleLose() {
+    setZombieLose()
+    setTimeout(() => {
+        document.addEventListener("keydown", handleStart, { once: true })
+        startScreenElem.classList.remove("hide")
+        alert("You Lose")
+    }, 100)
+}
 
 // setting the screen size
 function setPixelToWorldScale() {

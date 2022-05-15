@@ -33,6 +33,10 @@ export function getZombieRect() {
     return zombieElem.getBoundingClientRect()
 }
 
+export function setZombieLose() {
+    zombieElem.src = "imgs/Walk (1).png"
+}
+
 // everytime this function is called it updates frame time by multiplying the delta/time with the speedscale so that the animation can keep up
 function handleRun(delta, speedScale) {
     if (isJumping) {
